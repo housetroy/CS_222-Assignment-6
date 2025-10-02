@@ -25,4 +25,9 @@ class TestCalculator(unittest.TestCase):
         self.assertEqual(self.calc.divide(-1, -1), 1)
         with self.assertRaises(ValueError):
             self.calc.divide(10, 0)
+
+    def test_multi(self):
+        self.assertEqual(self.calc.divide(2,self.calc.multiply(2,5)),0.2)
+        self.assertEqual(self.calc.add(2,self.calc.multiply(2,5)),12)
+        self.assertEqual(self.calc.subtract(2,self.calc.multiply(2,5)),-8)
 unittest.main()
